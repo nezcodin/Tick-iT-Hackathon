@@ -1,6 +1,6 @@
 # Tick-iT-Hackathon
 
-Tick-iT is a full-stack Django web application that allows users to browse through different venues and events happening at those venues. Users can create an account, log in, and purchase tickets for their favorite events. Similar to Ticketmaster, Tick-iT aims to provide a seamless ticket-buying experience for users.
+Tick-iT is a full-stack Django web application that allows users to browse through different venues and events happening at those venues. Users can create an account, log in, and purchase tickets for their favorite events. Tick-iT aims to provide a seamless ticket-buying experience for users.
 
 ## Meet the Team
 
