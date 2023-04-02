@@ -44,11 +44,11 @@ Tick-iT is a full-stack Django web application that allows users to browse throu
 
 ## Component Hierarchy Diagram
 
-![Tick-It CHD](CHD.png)
+![Tick-It CHD](assets/CHD.png)
 
 ## ERD
 
-![Tick-iT ERD](ERD.png)
+![Tick-iT ERD](assets/ERD.png)
 
 ## Low-Fidelity Wireframes
 
