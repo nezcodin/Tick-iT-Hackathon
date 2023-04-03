@@ -3,6 +3,12 @@ from rest_framework import generics
 from .models import User, Venue, Event, Ticket
 from .serializers import UserSerializer, VenueSerializer, EventSerializer, TicketSerializer
 
+# Site Views
+
+def landing_view(request):
+    return render(request, "base.html", {})
+
+# API Views
 class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
