@@ -1,0 +1,100 @@
+.featured-event-container {
+  background-color: green;
+  height: 20rem;
+  width: 15rem;
+}
+
+.venue-container {
+  background-color: green;
+  flex: 0 0 auto;
+  height: 20rem;
+  width: 15rem;
+  margin-right: 6rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.venues-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  margin-bottom: 2rem;
+}
+
+.venues-container::-webkit-scrollbar {
+  width: 80%;
+  height: 10px;
+}
+
+.venues-container::-webkit-scrollbar-track {
+  background: purple;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.venues-container::-webkit-scrollbar-thumb {
+  background-color: pink;
+  border-radius: 10px;
+  width: 0%;
+}
+
+.events-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  margin-bottom: 2rem;
+}
+
+.events-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.events-container::-webkit-scrollbar-track {
+  background: purple;
+  border-radius: 10px;
+}
+
+.events-container::-webkit-scrollbar-thumb {
+  background-color: pink;
+  border-radius: 10px;
+  width: 0%;
+}
+
+.featured-event-container {
+  background-color: green;
+  flex: 0 0 auto;
+  height: 20rem;
+  width: 15rem;
+  margin-right: 6rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.view-all {
+  margin: 10px;
+}
+
+h2 {
+  margin-left: 10px;
+}
+
+hr.line {
+  height: 1px;
+  border: 0;
+  background-color: black;
+  width: 98%;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-top: -10px;
+}
+
+.featured-venues {
+  margin-top: 50px;
+}
+
+.featured-events {
+  margin-top: 50px;
+}
