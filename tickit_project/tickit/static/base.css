@@ -1,15 +1,29 @@
+@import url(./css/tokens.css);
+@import url(./css/colors.module.css);
+@import url(./css/typography.module.css);
+@import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+
+
 html {
   position: relative;
   min-height: 100%;
+}
+header {
+  margin: 0 0;
+  background-color: var(--md-sys-color-primary);
+  border-radius: 1em;
 }
 
 footer {
   width: 100%;
   margin-top: 3rem;
+  background-color: var(--md-sys-color-primary);
+  border-radius: 1em;
+  padding-top: -1em;
 }
 
 .nav-container {
-  background-color: #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,20 +31,19 @@ footer {
 }
 
 .nav-container a {
-  color: white;
   text-align: center;
   padding: 30px 20px;
   text-decoration: none;
+  color: var(--md-sys-color-on-primary);
 }
 
 .nav-container .nav-text a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
 }
 
 .nav-container .logo-container:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: var(--md-sys-color-primary-container);
 }
 
 .nav-container .logo {
@@ -47,9 +60,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #333;
   color: white;
-  height: 15rem;
 }
 
 .footer-title {
@@ -81,7 +92,7 @@ footer {
 }
 
 .socials a {
-  color: white;
+  color: var(--md-sys-color-on-primary);
   text-align: center;
   padding: 0 10px;
   text-decoration: none;
@@ -89,6 +100,6 @@ footer {
 }
 
 .socials a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
 }

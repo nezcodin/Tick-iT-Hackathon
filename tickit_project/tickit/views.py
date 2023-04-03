@@ -8,6 +8,14 @@ from .serializers import MemberSerializer, VenueSerializer, EventSerializer, Tic
 def landing_view(request):
     return render(request, "home.html", {})
 
+def event_details_view(request, pk):
+    event = Event.objects.get(pk=pk)
+    return render(request, "event_details.html", {'event': event})
+
+def venue_details_view(request, pk):
+    venue = Venue.objects.get(pk=pk)
+    return render(request, "venue_details.html", {'venue': venue})
+
 # API Views
 class MemberList(generics.ListCreateAPIView):
     queryset = Member.objects.all()

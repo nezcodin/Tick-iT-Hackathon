@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'venue_details.css' %}" />
+  </head>
+  <body>
+    <div class='venue-details-container'>
+        <h2>Venue Details</h2>
+        <div class='venue-details-header'>
+            <div>
+                <h3> |  </h3>
+            <div>
+            <div>
+                {% comment %} Event date is not set up in the model! <h3> {{ event.date }} | test </h3> {% endcomment %}
+                {% comment %} Venue model is not working! there is no info on Venue! {{ event.venue.venue }} {% endcomment %}
+            <div>
+        </div>
+        <div class='venue-description'>
+            <p> {% lorem 1 b random %} </p>
+        </div>
+        <div class='venue-details-footer'>
+            <div>
+                <h3> Tickets Available: X </h3>
+            <div>
+            <div>
+                <button> Buy Tickets </button>
+            </div>
+    </div>
+  </body> 
+    {% endblock %}
+</html>
