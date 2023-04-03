@@ -9,9 +9,18 @@ from .serializers import UserSerializer, VenueSerializer, EventSerializer, Ticke
 
 def landing_view(request):
     return render(request, "home.html", {})
+    
+def event_details_view(request, pk):
+    event = Event.objects.get(pk=pk)
+    return render(request, "event_details.html", {'event': event})
+
+def venue_details_view(request, pk):
+    venue = Venue.objects.get(pk=pk)
+    return render(request, "venue_details.html", {'venue': venue})
 
 def events_view(request):
     return render(request, "events.html", {})
+
 
 # API Views
 class UserList(generics.ListCreateAPIView):
