@@ -1,17 +1,17 @@
 from rest_framework import serializers
-from .models import User, Venue, Event, Ticket
+from .models import Member, Venue, Event, Ticket
 
 class TicketSerializer(serializers.HyperlinkedModelSerializer):
-    user = serializers.HyperlinkedRelatedField(
-        view_name='user-detail',
+    member = serializers.HyperlinkedRelatedField(
+        view_name='member-detail',
         read_only=True
     )
     event = serializers.HyperlinkedRelatedField(
         view_name='event-detail',
         read_only=True
     )
-    user_id = serializers.PrimaryKeyRelatedField(
-        queryset=User.objects.all(),
+    owner_id = serializers.PrimaryKeyRelatedField(
+        queryset=Member.objects.all(),
         source='owner'
     )
     event_id = serializers.PrimaryKeyRelatedField(
@@ -20,7 +20,7 @@ class TicketSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
        model = Ticket
-       fields = ('id', 'eventname', 'owner', 'forEvent', 'user_id', 'event_id', 'user', 'event')
+       fields = ('id', 'eventname', 'owner', 'forEvent', 'owner_id', 'event_id', 'member', 'event')
 
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     venue = serializers.HyperlinkedRelatedField(
@@ -56,15 +56,15 @@ class VenueSerializer(serializers.HyperlinkedModelSerializer):
        model = Venue
        fields = ('id', 'venue_url', 'name', 'username', 'password', 'address', 'event')
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class MemberSerializer(serializers.HyperlinkedModelSerializer):
     ticket = serializers.HyperlinkedRelatedField(
         view_name='ticket-detail',
         many=True,
         read_only=True
     )
-    user_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='user-detail'
+    member_url = serializers.ModelSerializer.serializer_url_field(
+        view_name='member-detail'
     )
     class Meta:
-       model = User
-       fields = ('id', 'user_url', 'name', 'username', 'password', 'ticket')
+       model = Member
+       fields = ('id', 'member_url', 'ticket', 'identifier', 'email', 'first_name', 'last_name', 'password')
