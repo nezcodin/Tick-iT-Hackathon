@@ -1,22 +1,19 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.conf import settings
 
 # Create your models here.
-class User(models.Model):
-  name = models.CharField(max_length=100)
-  username = models.CharField(max_length=100)
-  password = models.CharField(max_length=100)
+class Member(models.Model):
+  user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
 
   def __str__(self):
-      return self.name
+      return (self.user.username)
 
 class Venue(models.Model): 
-  name = models.CharField(max_length=100)
-  username = models.CharField(max_length=100)
-  password = models.CharField(max_length=100)
-  address = models.TextField()
+  venue = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
 
   def __str__(self):
-      return self.name
+      return self.venue.username
 
 class Event(models.Model):
   name = models.CharField(max_length=100, unique=True)
@@ -28,7 +25,7 @@ class Event(models.Model):
 
 class Ticket(models.Model): 
   eventname = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event', to_field='name')
-  owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usertickets')
+  owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='membertickets')
   forEvent = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='eventtickets')
 
   def __str__(self):
