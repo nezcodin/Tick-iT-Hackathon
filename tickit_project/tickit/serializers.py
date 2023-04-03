@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import User, Venue, Event, Ticket
+from django.contrib.auth.models import User
+from .models import Venue, Event, Ticket
 
 class TicketSerializer(serializers.HyperlinkedModelSerializer):
     user = serializers.HyperlinkedRelatedField(

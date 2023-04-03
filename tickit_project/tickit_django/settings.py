@@ -90,11 +90,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'tickit.Member'
-
-AUTH_USER_MODEL = 'tickit.Venue'
-
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'

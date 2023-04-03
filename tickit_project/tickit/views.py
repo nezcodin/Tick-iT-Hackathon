@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .models import User, Venue, Event, Ticket
+from django.contrib.auth.models import User
+from django.conf import settings
+from .models import Venue, Event, Ticket
 from .serializers import UserSerializer, VenueSerializer, EventSerializer, TicketSerializer
 
 # Site Views

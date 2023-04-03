@@ -1,17 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
-
-class User(Abstract):
-    name = models.CharField(max_length=100)
-    username = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
+from django.conf import settings
 
 class Venue(models.Model): 
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='member')
     name = models.CharField(max_length=100)
-    location = models.TextField()
+    location = models.TextField(default='location')
 
     def __str__(self):
         return self.name
@@ -25,8 +18,8 @@ class Event(models.Model):
         return self.name
 
 class Ticket(models.Model): 
-    eventname = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event', to_field='name')
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usertickets')
+    eventname = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='stuff', to_field='name')
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='usertickets')
     forEvent = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='eventtickets')
 
     def __str__(self):
