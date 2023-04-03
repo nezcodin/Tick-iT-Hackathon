@@ -4,7 +4,8 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('tickit.urls')),
+    path('', include('tickit.frontend_urls')),
+    path('rest/', include('tickit.urls')),
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
