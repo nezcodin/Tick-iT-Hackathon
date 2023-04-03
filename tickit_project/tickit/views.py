@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .models import Member, Venue, Event, Ticket
-from .serializers import MemberSerializer, VenueSerializer, EventSerializer, TicketSerializer
+from django.contrib.auth.models import User
+from django.conf import settings
+from .models import Venue, Event, Ticket
+from .serializers import UserSerializer, VenueSerializer, EventSerializer, TicketSerializer
 
 # Site Views
 
@@ -12,13 +14,13 @@ def events_view(request):
     return render(request, "events.html", {})
 
 # API Views
-class MemberList(generics.ListCreateAPIView):
-    queryset = Member.objects.all()
-    serializer_class = MemberSerializer
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
-class MemberDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Member.objects.all()
-    serializer_class = MemberSerializer
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 class VenueList(generics.ListCreateAPIView):
     queryset = Venue.objects.all()
