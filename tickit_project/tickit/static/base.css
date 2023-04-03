@@ -1,0 +1,90 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 100px; /* Height of the footer */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* Height of the footer */
+}
+
+.nav-container {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.nav-container a {
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  text-decoration: none;
+}
+
+.nav-container .nav-text a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.nav-container .logo-container:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-container .logo {
+  margin: 2vw;
+  height: 12vh;
+  justify-content: flex-start;
+}
+
+#end-nav {
+  margin-right: 3vh;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #333;
+  color: white;
+}
+.footer-title {
+  align-self: center;
+}
+.contributors {
+  text-align: center;
+}
+.contributor-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.contributors ul {
+  list-style: none;
+  justify-self: center;
+  align-self: center;
+  margin-left: -5vh;
+}
+.contributors li {
+  list-style: none;
+}
+.socials {
+  height: fit-content;
+}
+.socials a {
+  color: white;
+  text-align: center;
+  padding: 0 10px;
+  text-decoration: none;
+  height: fit-content;
+}
+.socials a:hover {
+  background-color: #ddd;
+  color: black;
+}

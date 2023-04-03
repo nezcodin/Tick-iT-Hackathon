@@ -1,16 +1,77 @@
 {% load static %}
+
 <html>
   <head>
-    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
   </head>
 
-  <div class="nav-container">
-    <nav>
-      {% comment %} have logo in nav too {% endcomment %}
-      <a href="">Profile</a>
-      <a href="">Events</a>
-      <a href="">Venues</a>
-    </nav>
+  <header>
+    <div class="nav-container">
+      <div class="logo-container">
+        <a href="">
+          <img
+            class="logo"
+            src="{% static 'tick-it_logo.png' %}"
+            alt="Tick-iT Logo"
+          />
+        </a>
+      </div>
+      <div class="nav-text">
+        <a href="login/">Login</a>
+        <a href="register/">Register</a>
+        <a href="venues/">Venues</a>
+        <a id='end-nav' href="events/">Events</a>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}
+      <p>Here are some featured events:</p>
+      {% include 'test.html' %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    <div class='footer-container'>
+    <div class='footer-title'>
+      <h4>Contributors</h4>
+    </div>
+    <div class='contributor-container'>
+      <div class="contributors">
+        <ul>
+          <h4 class='contributor-name'>Charlotte Fusco
+          </h4>
+            <li>
+              <div class="socials">
+                <a href="https://github.com/nezcodin" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/charlottefusco/" target="_blank">LinkedIn</a>
+              </div>
+            </li>
+        </ul>
+      </div>
+      <div class="contributors">
+        <ul>
+          <h4 class='contributor-name'>Duncan Wood</h4>
+            <li>
+              <div class="socials">
+                <a href="https://github.com/Duncan-Wood" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/duncanwoodpro/" target="_blank">LinkedIn</a>
+              </div>
+            </li>
+        </ul>
+      </div>
+      <div class="contributors">
+        <ul>
+          <h4 class='contributor-name'>Meixing Chueng </h4>
+            <li>
+              <div class="socials">
+                <a href="https://github.com/meixingc" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/meixingc/" target="_blank">LinkedIn</a>
+              </div>
+            </li>
+        </ul>
+      </div>
+    </div>
   </div>
-  {% block content %}{% endblock %}
+  </footer>
 </html>
