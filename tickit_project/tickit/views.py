@@ -6,7 +6,7 @@ from .serializers import MemberSerializer, VenueSerializer, EventSerializer, Tic
 # Site Views
 
 def landing_view(request):
-    return render(request, "base.html", {})
+    return render(request, "home.html", {})
 
 # API Views
 class MemberList(generics.ListCreateAPIView):
