@@ -1,11 +1,11 @@
 .featured-event-container {
-  background-color: green;
+  background-color: gray;
   height: 20rem;
   width: 15rem;
 }
 
 .venue-container {
-  background-color: green;
+  background-color: gray;
   flex: 0 0 auto;
   height: 20rem;
   width: 15rem;
@@ -28,13 +28,13 @@
 }
 
 .venues-container::-webkit-scrollbar-track {
-  background: purple;
+  background: rgb(63, 63, 63);
   width: 80%;
   border-radius: 10px;
 }
 
 .venues-container::-webkit-scrollbar-thumb {
-  background-color: pink;
+  background-color: rgb(172, 172, 172);
   border-radius: 10px;
   width: 0%;
 }
@@ -53,18 +53,18 @@
 }
 
 .events-container::-webkit-scrollbar-track {
-  background: purple;
+  background: rgb(63, 63, 63);
   border-radius: 10px;
 }
 
 .events-container::-webkit-scrollbar-thumb {
-  background-color: pink;
+  background-color: rgb(172, 172, 172);
   border-radius: 10px;
   width: 0%;
 }
 
 .featured-event-container {
-  background-color: green;
+  background-color: gray;
   flex: 0 0 auto;
   height: 20rem;
   width: 15rem;

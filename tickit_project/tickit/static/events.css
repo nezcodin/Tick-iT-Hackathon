@@ -1,0 +1,19 @@
+hr.line {
+  height: 1px;
+  border: 0;
+  background-color: black;
+  width: 95%;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-top: -10px;
+}
+
+.event {
+  background-color: brown;
+  height: 10rem;
+  width: 80%;
+}
+
+.events-container {
+  background-color: brown;
+}
