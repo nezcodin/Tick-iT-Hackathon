@@ -1,11 +1,16 @@
 {% load static %}
 <html>
-  <link rel="stylesheet" href="{% static "css/tickit.css" %}">
-  <nav>
-    {% comment %} have logo in nav too {% endcomment %}
-    <a href="">Profile</a>
-    <a href="">Events</a>
-    <a href="">Venues</a>
-  </nav>
+  <head>
+    <link rel="stylesheet" href="{% static 'tickit.css' %}">
+  </head>
+
+  <div class="nav-container">
+    <nav>
+      {% comment %} have logo in nav too {% endcomment %}
+      <a href="">Profile</a>
+      <a href="">Events</a>
+      <a href="">Venues</a>
+    </nav>
+  </div>
   {% block content %}{% endblock %}
 </html>

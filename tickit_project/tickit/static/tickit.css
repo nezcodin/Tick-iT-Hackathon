@@ -1,1 +1,8 @@
-nav {}
+.nav-container {
+  background-color: greenyellow;
+  padding: 20px;
+}
+
+.nav-container a {
+  display: flex;
+}
