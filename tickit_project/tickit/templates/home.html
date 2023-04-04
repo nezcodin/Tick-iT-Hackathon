@@ -14,12 +14,13 @@
 
       <div class="events-container">
         {% comment %} set up a for loop displaying 10 random events {% endcomment %}
-        <div class="featured-event-container">
-          <img>event photo</img>
-          <p>event name</p>
-          <p>date of event</p>
-        </div>
-        
+        {% for event in events %}
+          <div class="featured-event-container">
+            <img>event photo</img>
+            <p>{{ event.name }}</p>
+            <p>date of event</p>
+          </div>
+        {% endfor %}
 
       </div>
 
@@ -33,11 +34,13 @@
 
         <div class="venues-container">
           {% comment %} set up a for loop displaying 10 random venues {% endcomment %}
-          <div class="venue-container">
-            <img>venue photo</img>
-            <p>venue name</p>
-            <p>venue location</p>
-          </div>
+          {% for venue in venues %}
+            <div class="venue-container">
+              <img>venue photo</img>
+              <p>{{ venue.name }}</p>
+              <p>{{ venue.location }}</p>
+            </div>
+          {% endfor %}
 
         </div>
 

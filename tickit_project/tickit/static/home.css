@@ -1,5 +1,11 @@
+@import url(./css/tokens.css);
+@import url(./css/colors.module.css);
+@import url(./css/typography.module.css);
+@import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+
 .featured-event-container {
-  background-color: gray;
+  background-color: var(--md-sys-color-primary);
   height: 20rem;
   width: 15rem;
 }

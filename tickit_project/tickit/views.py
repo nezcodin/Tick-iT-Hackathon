@@ -8,7 +8,9 @@ from .serializers import UserSerializer, VenueSerializer, EventSerializer, Ticke
 # Site Views
 
 def landing_view(request):
-    return render(request, "home.html", {})
+    events = Event.objects.all()
+    venues = Venue.objects.all()
+    return render(request, "home.html", {'events': events, 'venues': venues})
     
 def event_details_view(request, pk):
     event = Event.objects.get(pk=pk)
