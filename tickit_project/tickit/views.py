@@ -16,7 +16,8 @@ def event_details_view(request, pk):
 
 def venue_details_view(request, pk):
     venue = Venue.objects.get(pk=pk)
-    return render(request, "venue_details.html", {'venue': venue})
+    events = Event.objects.all()
+    return render(request, "venue_details.html", {'venue': venue, 'events': events})
 
 def events_view(request):
     return render(request, "events.html", {})
