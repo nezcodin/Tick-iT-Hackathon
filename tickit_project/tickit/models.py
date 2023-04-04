@@ -20,6 +20,5 @@ class Ticket(models.Model):
     eventname = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='stuff', to_field='name')
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='usertickets')
     forEvent = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='eventtickets')
-
     def __str__(self):
         return self.eventname.name

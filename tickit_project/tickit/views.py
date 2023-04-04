@@ -3,6 +3,7 @@ from rest_framework import generics
 from django.contrib.auth.models import User
 from django.conf import settings
 from .models import Venue, Event, Ticket
+from .forms import RegistrationForm
 from .serializers import UserSerializer, VenueSerializer, EventSerializer, TicketSerializer
 
 # Site Views
@@ -23,6 +24,16 @@ def events_view(request):
 
 def login_view(request):
     return render(request, "login.html", {})
+
+def registration(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = RegistrationForm()
+    return render(request, 'register.html', {'form': form})
 
 # API Views
 class UserList(generics.ListCreateAPIView):
