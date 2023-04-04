@@ -17,6 +17,11 @@
         </a>
       </div>
       <div class="nav-text">
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'venue_create_view' %}">Create Venue</a>
+        {% comment %} <a href="{% url 'venue_list_view' %}">Venues</a> {% endcomment %}
+        <a id='end-nav' href="{% url 'events_list_view' %}">Events</a>
         {% if user.is_authenticated %}
           <a href="{% url 'logout' %}?next={% url 'home' %}">Logout</a>
         {% else %}

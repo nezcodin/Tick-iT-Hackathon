@@ -1,0 +1,34 @@
+h2 {
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+hr.line {
+  height: 1px;
+  border: 0;
+  background-color: black;
+  width: 95%;
+  margin-left: 1rem;
+}
+
+img {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 10rem;
+  margin-left: 2rem;
+}
+
+.venues-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.venue {
+  background-color: brown;
+  height: 10rem;
+  width: 95%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  display: flex;
+}

@@ -9,35 +9,35 @@
     <h2>All Events</h2>
     <hr class="line">
     <div class="events-container">
-      <div class="event">
-        <div class="image-container">
-          <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg">
-        </div>
-        <div class="details-container">
-          <div class="event-name">
-            <h4>event name</h4>
-            <p>artist name</p>
+
+      {% for event in events%}
+
+        <div class="event">
+          <div class="image-container">
+            <img src={{ event.photo_url }}>
           </div>
-          <div class="event-venue">
-            <h4>venue</h4>
-            <p>date|time</p>
+
+          <div class="details-container">
+
+            <div class="event-name-link">
+              <h4 id="name">{{ event.name }}</h4>
+              <p id="artist">artist name</p>
+              <a href='{% url 'event_details_view' event.pk %}'>See Event Details...</a>
+            </div>
+
+            <div class="event-venue-button">
+              <h4 id="venue">{{ event.venue }}</h4>
+              <p id="date-time">{{ event.date }} | {{event.time}}</p>
+              <button>Buy a Ticket</button>
+            </div>
+
           </div>
+
         </div>
-        <div class="link">
-          <a href=''>See Event Details...</a>
-        </div>
-        <div class="button-container">          
-          <button>Buy a Ticket</button>
-        </div>
-      </div>
-      <hr class="line">
-      <div class="event">
-        <!-- Add content for second event -->
-      </div>
-      <hr class="line">
-      <div class="event">
-        <!-- Add content for third event -->
-      </div>
+        <hr class="line">
+
+      {% endfor %}
+
     </div>
   </body>
   
