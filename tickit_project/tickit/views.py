@@ -21,6 +21,8 @@ def venue_details_view(request, pk):
 def events_view(request):
     return render(request, "events.html", {})
 
+def login_view(request):
+    return render(request, "login.html", {})
 
 # API Views
 class UserList(generics.ListCreateAPIView):
