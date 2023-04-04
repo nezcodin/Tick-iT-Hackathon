@@ -11,23 +11,48 @@
         <h2>Venue Details</h2>
         <div class='venue-details-header'>
             <div>
-                <h3> |  </h3>
-            <div>
-            <div>
-                {% comment %} Event date is not set up in the model! <h3> {{ event.date }} | test </h3> {% endcomment %}
-                {% comment %} Venue model is not working! there is no info on Venue! {{ event.venue.venue }} {% endcomment %}
-            <div>
+                <h3> {{ venue.name }} </h3>
+                {% if venue.address %}
+                <h3> {{ venue.address }} </h3>
+                {% else %}
+                <h3> Address not available </h3>
+                {% endif %}
+                <hr class="line"></hr>
+            </div>
         </div>
         <div class='venue-description'>
             <p> {% lorem 1 b random %} </p>
+            <hr class="line"></hr>
         </div>
-        <div class='venue-details-footer'>
+        <div class='venue-events'>
+            <h4> Upcoming Events </h4>
             <div>
-                <h3> Tickets Available: X </h3>
-            <div>
-            <div>
-                <button> Buy Tickets </button>
+                <ul>
+                    {% if events == None %}
+                        <li> No upcoming events </li>
+                    {% endif %}
+                    {% for event in events %}
+                        {% if event.venue_id == venue.id%}
+                            <li class='venue-event-container'>
+                                <div class='venue-event-header'>
+                                    <img src="{% static 'images/placeholder.png' %}" alt="Event Image" />
+                                    <h4>{{ event.name }}</h4>
+                                    <h5>{{ venue.name }}</h5>
+                                <div>
+                                <div class='venue-event-details'>
+                                    <h6>{{ event.date }}<h6>
+                                    <h6> event time<h6>
+                                <div>
+                                <div class='venue-event-action'>
+                                    <a href="{% url 'event_details_view' event.pk %}">See Event Details...</a>
+                                    <button>Buy Tickets</button>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
+        <div>
     </div>
   </body> 
     {% endblock %}
