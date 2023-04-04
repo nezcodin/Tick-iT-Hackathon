@@ -1,0 +1,34 @@
+{% extends 'base.html' %}{% block content %}
+{% load static %}
+<html>
+
+  <head>
+    <link rel="stylesheet" href="{% static 'venues.css' %}">
+  </head>
+
+  <body>
+
+    <h2>All Venues</h2>
+    <hr class="line"></hr>
+
+    <div class="venues-container">
+
+      {% for venue in venues %}
+
+        <div class="venue">
+          <img src={{ venue.photo_url }} alt={{ venue.name }}>
+
+          <h4>{{ venue.name }}</h4>
+          <p>{{ venue.location }}</p>
+
+          <a href="">See Hosted Events...</a>
+        </div>
+
+      {% endfor %}
+
+      </div>
+
+  </body>
+
+  {% endblock %}
+</html>
