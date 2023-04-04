@@ -8,7 +8,7 @@
 
   <body>
 
-    <h2>All Venues</h2>
+    <h2 class="title">All Venues</h2>
     <hr class="line"></hr>
 
     <div class="venues-container">
@@ -16,13 +16,18 @@
       {% for venue in venues %}
 
         <div class="venue">
-          <img src={{ venue.photo_url }} alt={{ venue.name }}>
+          <div class="image-container">
+            <img src={{ venue.photo_url }} alt={{ venue.name }}>
+          </div>
 
-          <h4>{{ venue.name }}</h4>
-          <p>{{ venue.location }}</p>
+          <div class="venue-location">
+            <h4>{{ venue.name }}</h4>
+            <p>{{ venue.location }}</p>
+          </div>
 
-          <a href="">See Hosted Events...</a>
+          <a class="link" href="">See Hosted Events...</a>
         </div>
+        <hr class="line"></hr>
 
       {% endfor %}
 

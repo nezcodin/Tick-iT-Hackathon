@@ -6,7 +6,7 @@
   </head>
 
   <body>
-    <h2>All Events</h2>
+    <h2 class="title">All Events</h2>
     <hr class="line">
     <div class="events-container">
 
@@ -20,13 +20,13 @@
           <div class="details-container">
 
             <div class="event-name-link">
-              <h4 id="name">{{ event.name }}</h4>
-              <p id="artist">artist name</p>
-              <a href='{% url 'event_details_view' event.pk %}'>See Event Details...</a>
+              <h4 class="heading" id="event-name">{{ event.name }}</h4>
+              <p id="artist-name">artist name</p>
+              <a class="link" href='{% url 'event_details_view' event.pk %}'>See Event Details...</a>
             </div>
 
             <div class="event-venue-button">
-              <h4 id="venue">{{ event.venue }}</h4>
+              <h4 class="heading" id="venue-name">{{ event.venue }}</h4>
               <p id="date-time">{{ event.date }} | {{event.time}}</p>
               <button>Buy a Ticket</button>
             </div>
