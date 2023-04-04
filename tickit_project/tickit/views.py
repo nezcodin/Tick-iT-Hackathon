@@ -6,6 +6,7 @@ from .models import Venue, Event, Ticket
 from .forms import RegistrationForm
 from .serializers import UserSerializer, VenueSerializer, EventSerializer, TicketSerializer
 from django.shortcuts import redirect
+from django.contrib.auth import logout
 
 # Site Views
 
@@ -28,6 +29,10 @@ def events_view(request):
 
 def login_view(request):
     return render(request, "login.html", {})
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')
 
 def registration(request):
     if request.method == 'POST':
