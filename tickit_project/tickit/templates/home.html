@@ -16,9 +16,9 @@
         {% comment %} set up a for loop displaying 10 random events {% endcomment %}
         {% for event in events %}
           <div class="featured-event-container">
-            <img>event photo</img>
+            <img src={{ event.photo_url }}></img>
             <p>{{ event.name }}</p>
-            <p>date of event</p>
+            <p>{{ event.date }}</p>
           </div>
         {% endfor %}
 
@@ -36,7 +36,7 @@
           {% comment %} set up a for loop displaying 10 random venues {% endcomment %}
           {% for venue in venues %}
             <div class="venue-container">
-              <img>venue photo</img>
+              <img src={{ venue.photo_url }}></img>
               <p>{{ venue.name }}</p>
               <p>{{ venue.location }}</p>
             </div>

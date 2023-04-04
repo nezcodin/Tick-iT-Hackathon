@@ -5,13 +5,13 @@
 @import url(./css/theme.dark.css) (prefers-color-scheme: dark);
 
 .featured-event-container {
-  background-color: var(--md-sys-color-primary);
+  background-color: var(--md-sys-color-primary-container);
   height: 20rem;
   width: 15rem;
 }
 
 .venue-container {
-  background-color: gray;
+  background-color: var(--md-sys-color-primary-container);
   flex: 0 0 auto;
   height: 20rem;
   width: 15rem;
@@ -34,13 +34,13 @@
 }
 
 .venues-container::-webkit-scrollbar-track {
-  background: rgb(63, 63, 63);
+  background: var(--md-sys-color-secondary);
   width: 80%;
   border-radius: 10px;
 }
 
 .venues-container::-webkit-scrollbar-thumb {
-  background-color: rgb(172, 172, 172);
+  background-color: var(--md-sys-color-on-secondary-container);
   border-radius: 10px;
   width: 0%;
 }
@@ -59,18 +59,18 @@
 }
 
 .events-container::-webkit-scrollbar-track {
-  background: rgb(63, 63, 63);
+  background: var(--md-sys-color-secondary);
   border-radius: 10px;
 }
 
 .events-container::-webkit-scrollbar-thumb {
-  background-color: rgb(172, 172, 172);
+  background-color: var(--md-sys-color-on-secondary-container);
   border-radius: 10px;
   width: 0%;
 }
 
 .featured-event-container {
-  background-color: gray;
+  background-color: var(--md-sys-color-primary-container);
   flex: 0 0 auto;
   height: 20rem;
   width: 15rem;
@@ -85,12 +85,13 @@
 
 h2 {
   margin-left: 10px;
+  color: var(--md-sys-color-on-secondary-container);
 }
 
 hr.line {
   height: 1px;
   border: 0;
-  background-color: black;
+  background-color: var(--md-sys-color-on-secondary-container);
   width: 98%;
   margin-left: 10px;
   margin-bottom: 20px;
@@ -99,8 +100,26 @@ hr.line {
 
 .featured-venues {
   margin-top: 50px;
+  margin-bottom: 3rem;
 }
 
 .featured-events {
   margin-top: 50px;
+}
+
+img {
+  height: 13rem;
+  width: 12rem;
+  display: flex;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+p {
+  color: var(--md-sys-color-on-primary-container);
+  margin-left: 1.5rem;
+}
+
+a {
+  color: var(--md-sys-color-on-secondary-container)
 }
