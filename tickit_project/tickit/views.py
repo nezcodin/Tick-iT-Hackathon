@@ -5,6 +5,7 @@ from django.conf import settings
 from .models import Venue, Event, Ticket
 from .forms import RegistrationForm
 from .serializers import UserSerializer, VenueSerializer, EventSerializer, TicketSerializer
+from django.shortcuts import redirect
 
 # Site Views
 
@@ -32,7 +33,7 @@ def registration(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
             return redirect('home')
     else:
         form = RegistrationForm()

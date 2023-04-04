@@ -17,8 +17,14 @@
         </a>
       </div>
       <div class="nav-text">
-        <a href="accounts/login/">Login</a>
-        <a href="register/">Register</a>
+        {% if user.is_authenticated %}
+          <a href="accounts/logout/">Logout</a>
+        {% else %}
+          <a href="accounts/login/">Login</a>
+        {% endif %}
+        {% if not user.is_authenticated %}
+          <a href="register/">Register</a>
+        {% endif %}
         <a href="venues/">Venues</a>
         <a id='end-nav' href="events/">Events</a>
     </div>
