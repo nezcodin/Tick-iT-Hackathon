@@ -12,56 +12,62 @@
         <div class='venue-details-header'>
             <div>
                 <h3> {{ venue.name }} </h3>
-                {% if venue.address %}
-                <h3> {{ venue.address }} </h3>
+                {% if venue.location %}
+                <h3> {{ venue.location }} </h3>
                 {% else %}
                 <h3> Address not available </h3>
                 {% endif %}
                 <hr class="line"></hr>
+                {% if venue.photo_url %}
+                <img src={{ venue.photo_url }} alt="Venue Image" />
+                {% else %}
+                <h3> Photo not available </h3>
+                {% endif %}
             </div>
-        </div>
-        <div class='venue-description'>
-            <p> {% lorem 1 b random %} </p>
-            <hr class="line"></hr>
-            <h4>{{ venue.owner_id}}, {{ user.id }}</h4>
         </div>
         {% if user.id == venue.owner_id %}
         <div>
             <a href="{% url 'venue_update_view' venue.pk %}">
                 <button>Update Venue</button>
             </a>
+            <form method="post" action="{% url 'venue_delete_view' venue.pk %}">
+                {% csrf_token %}
+                <button type="submit">Delete Venue</button>
+            </form>
         </div>
         {% endif %}
         <div class='venue-events'>
             <h4> Upcoming Events </h4>
             <div>
+                {% if events %}
                 <ul>
-                    {% if events == None %}
-                        <li> No upcoming events </li>
-                    {% endif %}
                     {% for event in events %}
-                        {% if event.venue_id == venue.id%}
+                        {% if event.venue_id == venue.id %}
                             <li class='venue-event-container'>
                                 <div class='venue-event-header'>
-                                    <img src="{% static 'images/placeholder.png' %}" alt="Event Image" />
+                                    <img src={{ event.photo_url }} alt="Event Image" />
                                     <h4>{{ event.name }}</h4>
                                     <h5>{{ venue.name }}</h5>
-                                <div>
+                                </div>
                                 <div class='venue-event-details'>
                                     <h6>{{ event.date }}<h6>
                                     <h6> event time<h6>
-                                <div>
+                                </div>
                                 <div class='venue-event-action'>
                                     <a href="{% url 'event_details_view' event.pk %}">See Event Details...</a>
                                     <button>Buy Tickets</button>
                                 </div>
                             </li>
                         {% endif %}
+                    {% empty %}
+                        <li> No upcoming events </li>
                     {% endfor %}
                 </ul>
+            {% else %}
+                <p>No events found.</p>
+            {% endif %}
             </div>
-        <div>
-    </div>
+        </div>
   </body> 
     {% endblock %}
 </html>

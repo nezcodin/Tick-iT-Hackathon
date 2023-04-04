@@ -89,9 +89,9 @@ class VenueUpdateView(UpdateView):
             # Handle error if Venue object was not created
             return ('there was an error updating the venue')
 
-class VenueDeleteView(generics.DestroyAPIView):
-    queryset = Venue.objects.all()
-    serializer_class = VenueSerializer
+class VenueDeleteView(DeleteView):
+    model = Venue
+    success_url = reverse_lazy('venues_list_view')
 
 # REST API Views
 class UserList(generics.ListCreateAPIView):
