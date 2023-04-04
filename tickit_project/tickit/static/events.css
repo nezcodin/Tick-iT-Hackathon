@@ -1,18 +1,25 @@
-h2 {
+@import url(./css/tokens.css);
+@import url(./css/colors.module.css);
+@import url(./css/typography.module.css);
+@import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+
+.title {
   margin-top: 3rem;
   margin-left: 1rem;
+  color: var(--md-sys-color-on-secondary-container);
 }
 
 hr.line {
   height: 1px;
   border: 0;
-  background-color: black;
+  background-color: var(--md-sys-color-on-secondary-container);
   width: 95%;
   margin-left: 1rem;
 }
 
 .event {
-  background-color: pink;
+  background-color: var(--md-sys-color-primary-container);
   height: 10rem;
   width: 95%;
   margin-bottom: 1rem;
@@ -39,13 +46,6 @@ img {
   margin-left: 2rem;
 }
 
-.details-container {
-  display: flex;
-  margin-left: 2rem;
-  height: 10rem;
-  width: 95%;
-}
-
 .event-name-link {
   display: flex;
   flex-direction: column;
@@ -55,14 +55,49 @@ img {
   margin-left: 2rem;
 }
 
-#name {
-  padding-bottom: -50px;
+#event-name {
+  margin-bottom: -1rem;
+}
+
+#artist-name {
+  margin-bottom: 4.5rem;
 }
 
 .event-venue-button {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-left: 45rem;
+  margin-left: 65rem;
   margin-top: -0.5rem;
+  margin-right: 2rem;
+  width: 10rem;
+}
+
+#venue-name {
+  margin-bottom: -1rem;
+}
+
+#date-time {
+  margin-bottom: 3.5rem;
+}
+
+button {
+  border-radius: 5rem;
+  width: 7rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  border-color: var(--md-sys-color-on-tertiary-container);
+}
+
+.heading {
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.link {
+  color: var(--md-sys-color-on-primary-container);
+}
+
+p {
+  color: var(--md-sys-color-on-primary-container);
 }

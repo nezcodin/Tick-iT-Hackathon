@@ -6,7 +6,7 @@ from django import forms
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
     name = forms.CharField(required=True)
-    options = forms.ChoiceField(choices=[('member', 'Member'), ('venue', 'Venue')], required=True)
+    options = forms.ChoiceField(choices=[('member', 'Member'), ('venue', 'Venue')])
     class Meta:
         model = User
         fields = ('username', 'password1', 'password2', 'email', 'name', 'options')
@@ -17,8 +17,20 @@ class RegistrationForm(UserCreationForm):
         user.save()
         if self.cleaned_data['options'] == 'member':
             group = Group.objects.get(name='Members')
+            grouprem = Group.objects.get(name='Venues')
+            user.groups.remove(grouprem)
+            user.groups.clear()
             user.groups.add(group)
-        else :
+            print("Added user to Members group.")
+
+        elif self.cleaned_data['options'] == 'venue':
             group = Group.objects.get(name='Venues')
+            grouprem = Group.objects.get(name='Members')
+            user.groups.remove(grouprem)
+            user.groups.clear()
             user.groups.add(group)
+            print("Added user to Venues group.")
+
+        else:
+            raise forms.ValidationError("Invalid option selected.")
         return user

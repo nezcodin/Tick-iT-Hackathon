@@ -10,7 +10,9 @@ urlpatterns = [
     path('events/<int:pk>/', views.event_details_view, name='event_details_view'),
     path('venues/', views.venues_view, name='venues_list_view'),
     path('venues/<int:pk>/', views.venue_details_view, name='venue_details_view'),
-    
+
+    path('purchase-tickets/', views.purchase_tickets_view, name='purchase_tickets'),
+
     path('register/', views.registration, name='register'),
     path('accounts/logout/', views.logout_view, name='logout'),
 

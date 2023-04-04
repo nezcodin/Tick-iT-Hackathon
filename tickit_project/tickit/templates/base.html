@@ -21,7 +21,7 @@
           <a href="{% url 'logout' %}?next={% url 'home' %}">Logout</a>
           <a href="{% url 'venue_create_view' %}">Create Venue</a>
         {% else %}
-          <a href="accounts/login/">Login</a>
+          <a href="{% url 'login' %}">Login</a>
           <a href="{% url 'register' %}">Register</a>
         {% endif %}
         <a href="{% url 'venues_list_view' %}">Venues</a>
