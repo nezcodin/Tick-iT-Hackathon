@@ -20,14 +20,14 @@
           <div class="details-container">
 
             <div class="event-name-link">
-              <h4 class="heading">{{ event.name }}</h4>
-              <p>artist name</p>
-              <a href='{% url 'event_details_view' event.pk %}'>See Event Details...</a>
+              <h4 class="heading" id="event-name">{{ event.name }}</h4>
+              <p id="artist-name">artist name</p>
+              <a class="link" href='{% url 'event_details_view' event.pk %}'>See Event Details...</a>
             </div>
 
             <div class="event-venue-button">
-              <h4 class="heading">{{ event.venue }}</h4>
-              <p>{{ event.date }} | {{event.time}}</p>
+              <h4 class="heading" id="venue-name">{{ event.venue }}</h4>
+              <p id="date-time">{{ event.date }} | {{event.time}}</p>
               <button>Buy a Ticket</button>
             </div>
 
