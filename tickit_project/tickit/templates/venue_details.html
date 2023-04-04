@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
 
 <html>
   <head>
     <link rel="stylesheet" href="{% static 'venue_details.css' %}" />
   </head>
+  {% block content %}
   <body>
     <div class='venue-details-container'>
         <h2>Venue Details</h2>
@@ -23,7 +23,15 @@
         <div class='venue-description'>
             <p> {% lorem 1 b random %} </p>
             <hr class="line"></hr>
+            <h4>{{ venue.owner_id}}, {{ user.id }}</h4>
         </div>
+        {% if user.id == venue.owner_id %}
+        <div>
+            <a href="{% url 'venue_update_view' venue.pk %}">
+                <button>Update Venue</button>
+            </a>
+        </div>
+        {% endif %}
         <div class='venue-events'>
             <h4> Upcoming Events </h4>
             <div>
