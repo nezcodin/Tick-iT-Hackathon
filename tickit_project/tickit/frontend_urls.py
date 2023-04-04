@@ -12,7 +12,7 @@ urlpatterns = [
     path('venues/', views.venues_view, name='venues_list_view'),
     path('venues/<int:pk>/', views.venue_details_view, name='venue_details_view'),
     path('register/', views.registration, name='register'),
-
+    path('accounts/logout/', views.logout_view, name='logout'),
     path('create/', VenueCreateView.as_view(), name='venue_create_view'),
     path('venues/<int:pk>/update/', VenueUpdateView.as_view(), name='venue_update_view'),
     path('delete/', VenueDeleteView.as_view(), name='venue_delete_view')

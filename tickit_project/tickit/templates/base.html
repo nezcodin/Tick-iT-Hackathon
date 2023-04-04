@@ -18,12 +18,12 @@
       </div>
       <div class="nav-text">
         {% if user.is_authenticated %}
-          <a href="accounts/logout/">Logout</a>
+          <a href="{% url 'logout' %}?next={% url 'home' %}">Logout</a>
           <a href="{% url 'venue_create_view' %}">Create Venue</a>
         {% else %}
           <a href="accounts/login/">Login</a>
           <a href="{% url 'register' %}">Register</a>
-          {% endif %}
+        {% endif %}
         <a href="{% url 'venues_list_view' %}">Venues</a>
         <a id='end-nav' href="{% url 'events_list_view' %}">Events</a>
     </div>
