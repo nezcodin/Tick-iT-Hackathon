@@ -1,3 +1,9 @@
+@import url(./css/tokens.css);
+@import url(./css/colors.module.css);
+@import url(./css/typography.module.css);
+@import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+
 h2 {
   margin-top: 3rem;
   margin-left: 1rem;
@@ -25,10 +31,42 @@ img {
 }
 
 .venue {
-  background-color: brown;
+  background-color: var(--md-sys-color-primary-container);
   height: 10rem;
   width: 95%;
   margin-bottom: 1rem;
   margin-top: 1rem;
   display: flex;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.venue-location {
+  display: flex;
+  flex-direction: column;
+  height: 2rem;
+  width: 10rem;
+  margin-left: 2rem;
+}
+
+.title {
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.link {
+  height: 9rem;
+  width: 80%;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  color: var(--md-sys-color-on-primary-container);
+}
+
+p {
+  color: var(--md-sys-color-on-primary-container);
 }

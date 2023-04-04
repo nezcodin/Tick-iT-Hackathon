@@ -1,18 +1,25 @@
+@import url(./css/tokens.css);
+@import url(./css/colors.module.css);
+@import url(./css/typography.module.css);
+@import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+
 h2 {
   margin-top: 3rem;
   margin-left: 1rem;
+  color: var(--md-sys-color-on-secondary-container);
 }
 
 hr.line {
   height: 1px;
   border: 0;
-  background-color: black;
+  background-color: var(--md-sys-color-on-secondary-container);
   width: 95%;
   margin-left: 1rem;
 }
 
 .event {
-  background-color: pink;
+  background-color: var(--md-sys-color-primary-container);
   height: 10rem;
   width: 95%;
   margin-bottom: 1rem;
@@ -52,7 +59,6 @@ img {
   margin-top: -0.5rem;
   height: 1rem;
   width: 20rem;
-  margin-left: 2rem;
 }
 
 #name {
@@ -63,6 +69,28 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-left: 45rem;
+  margin-left: 43rem;
   margin-top: -0.5rem;
+  width: 10rem;
+}
+
+button {
+  border-radius: 5rem;
+  width: 7rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  border-color: var(--md-sys-color-on-tertiary-container);
+}
+
+h4 {
+  color: var(--md-sys-color-on-primary-container);
+}
+
+a {
+  color: var(--md-sys-color-on-primary-container);
+}
+
+p {
+  color: var(--md-sys-color-on-primary-container);
 }
