@@ -1,19 +1,79 @@
+h2 {
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
 hr.line {
   height: 1px;
   border: 0;
   background-color: black;
   width: 95%;
-  margin-left: 10px;
-  margin-bottom: 20px;
-  margin-top: -10px;
+  margin-left: 1rem;
 }
 
 .event {
   background-color: brown;
   height: 10rem;
-  width: 80%;
+  width: 95%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  display: flex;
 }
 
 .events-container {
-  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 10rem;
+  margin-left: 2rem;
+}
+
+.details-container {
+  display: flex;
+  margin-left: 2rem;
+  height: 10rem;
+  width: 95%;
+}
+
+.event-name {
+  display: flex;
+  flex-direction: column;
+  margin-top: -5rem;
+}
+
+.event-venue {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 60rem;
+  margin-top: 0rem;
+}
+
+.button-container {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.link {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 0.5rem;
 }
