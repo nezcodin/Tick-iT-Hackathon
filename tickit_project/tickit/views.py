@@ -13,17 +13,22 @@ def landing_view(request):
     venues = Venue.objects.all()
     return render(request, "home.html", {'events': events, 'venues': venues})
     
+def events_view(request):
+    events = Event.objects.all()
+    return render(request, "events.html", {'events': events})
+
 def event_details_view(request, pk):
     event = Event.objects.get(pk=pk)
     return render(request, "event_details.html", {'event': event})
+
+def venues_view(request):
+    venues = Venue.objects.all()
+    return render(request, "venues.html", {'venues': venues})
 
 def venue_details_view(request, pk):
     venue = Venue.objects.get(pk=pk)
     events = Event.objects.all()
     return render(request, "venue_details.html", {'venue': venue, 'events': events})
-
-def events_view(request):
-    return render(request, "events.html", {})
 
 def login_view(request):
     return render(request, "login.html", {})
