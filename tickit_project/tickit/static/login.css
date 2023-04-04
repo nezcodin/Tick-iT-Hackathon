@@ -1,3 +1,13 @@
-.login-form {
+html {
+  height: 10rem;
+  width: 100%;
   text-align: center;
+}
+
+.login-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
