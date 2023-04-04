@@ -1,24 +1,37 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .models import Member, Venue, Event, Ticket
-from .serializers import MemberSerializer, VenueSerializer, EventSerializer, TicketSerializer
+from django.contrib.auth.models import User
+from django.conf import settings
+from .models import Venue, Event, Ticket
+from .serializers import UserSerializer, VenueSerializer, EventSerializer, TicketSerializer
 
 # Site Views
 
 def landing_view(request):
     return render(request, "home.html", {})
+    
+def event_details_view(request, pk):
+    event = Event.objects.get(pk=pk)
+    return render(request, "event_details.html", {'event': event})
+
+def venue_details_view(request, pk):
+    venue = Venue.objects.get(pk=pk)
+    return render(request, "venue_details.html", {'venue': venue})
 
 def events_view(request):
     return render(request, "events.html", {})
 
-# API Views
-class MemberList(generics.ListCreateAPIView):
-    queryset = Member.objects.all()
-    serializer_class = MemberSerializer
+def login_view(request):
+    return render(request, "login.html", {})
 
-class MemberDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Member.objects.all()
-    serializer_class = MemberSerializer
+# API Views
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 class VenueList(generics.ListCreateAPIView):
     queryset = Venue.objects.all()
