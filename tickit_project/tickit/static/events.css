@@ -4,7 +4,7 @@
 @import url(./css/theme.light.css) (prefers-color-scheme: light);
 @import url(./css/theme.dark.css) (prefers-color-scheme: dark);
 
-h2 {
+.title {
   margin-top: 3rem;
   margin-left: 1rem;
   color: var(--md-sys-color-on-secondary-container);
@@ -61,10 +61,6 @@ img {
   width: 20rem;
 }
 
-#name {
-  padding-bottom: -50px;
-}
-
 .event-venue-button {
   display: flex;
   flex-direction: column;
@@ -83,7 +79,7 @@ button {
   border-color: var(--md-sys-color-on-tertiary-container);
 }
 
-h4 {
+.heading {
   color: var(--md-sys-color-on-primary-container);
 }
 
