@@ -1,2 +1,11 @@
-{% comment %} def create_user(self, email, date_of_birth, password=None):
-    # create user here {% endcomment %}
+{% extends "base.html" %}
+{% block content %}
+
+  <h2>Registration</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+  </form>
+  
+{% endblock %}
