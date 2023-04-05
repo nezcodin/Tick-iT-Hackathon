@@ -4,13 +4,13 @@
 @import url(./css/theme.light.css) (prefers-color-scheme: light);
 @import url(./css/theme.dark.css) (prefers-color-scheme: dark);
 
-.title {
+.event-title {
   margin-top: 3rem;
   margin-left: 1rem;
   color: var(--md-sys-color-on-secondary-container);
 }
 
-hr.line {
+.event-line {
   height: 1px;
   border: 0;
   background-color: var(--md-sys-color-on-secondary-container);
@@ -81,7 +81,7 @@ hr.line {
   margin-bottom: 3.5rem;
 }
 
-button {
+#buy-ticket-button {
   border-radius: 5rem;
   width: 7rem;
   height: 2rem;
@@ -90,14 +90,14 @@ button {
   border-color: var(--md-sys-color-on-tertiary-container);
 }
 
-.heading {
+.event-heading {
   color: var(--md-sys-color-on-primary-container);
 }
 
-.link {
+.event-details-link {
   color: var(--md-sys-color-on-primary-container);
 }
 
-p {
+.event-p {
   color: var(--md-sys-color-on-primary-container);
 }

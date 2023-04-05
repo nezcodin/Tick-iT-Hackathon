@@ -83,7 +83,7 @@
   margin: 10px;
 }
 
-h2 {
+.title {
   margin-left: 10px;
   color: var(--md-sys-color-on-secondary-container);
 }
@@ -107,7 +107,7 @@ hr.line {
   margin-top: 50px;
 }
 
-img {
+.home-image {
   height: 13rem;
   width: 12rem;
   display: flex;
@@ -120,6 +120,10 @@ p {
   margin-left: 1.5rem;
 }
 
-a {
+#venues-link {
+  color: var(--md-sys-color-on-secondary-container)
+}
+
+#events-link {
   color: var(--md-sys-color-on-secondary-container)
 }
