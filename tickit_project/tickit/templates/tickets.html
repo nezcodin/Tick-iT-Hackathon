@@ -8,16 +8,17 @@
   <body>
     <h2 class="title">Purchase Tickets</h2>
     <hr class="line">
+    <h1>{{ events.name }}</h1>
 
     <div class="tickets-container">
 
       <div class="ticket"> 
         <div class="name-venue">       
-          <h4 id="event-name">{{ event.name }}</h4>
+          <h4 id="event-name">{{ events.name }}</h4>
           <p id="event-venue">{{ event.venue }}</p>
         </div>
         <div class="date-price">
-          <p id="date-time">{{ event.date }} | {{ event.time }}</p>
+          <p id="date-time">{{ events.date }} | {{ events.time }}</p>
           <h5 id="price">Price: ${{ ticket.price }}</h5>
         </div>
       </div>
