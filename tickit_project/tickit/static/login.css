@@ -53,6 +53,13 @@ html {
   box-shadow: 2px 2px 2px rgb(70, 70, 70);
 }
 
+.login-title {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
 .login-button {
   margin-top: 20px;
   font-size: 12px;
