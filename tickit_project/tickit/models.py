@@ -14,6 +14,7 @@ class Venue(models.Model):
 class Event(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField()
+    artist = models.CharField(max_length=100, blank=True, null=True)
     category = models.CharField(max_length=100)
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE, related_name='events')
     photo_url = models.TextField(null=True, default=None)
@@ -26,5 +27,6 @@ class Ticket(models.Model):
     eventname = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='stuff', to_field='name')
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='usertickets')
     forEvent = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='eventtickets')
+    price = models.IntegerField()
     def __str__(self):
         return self.eventname.name
