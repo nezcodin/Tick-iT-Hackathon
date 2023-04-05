@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+  <a href="{% url 'venue_details_view' pk=venue.pk %}">Go Back</a>
   <h1>Update Venue</h1>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
