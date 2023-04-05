@@ -36,7 +36,8 @@ def venue_details_view(request, pk):
 
 def purchase_tickets_view(request):
     tickets = Ticket.objects.all()
-    return render(request, "tickets.html", {'tickets': tickets})
+    events = Event.objects.all()
+    return render(request, "tickets.html", {'tickets': tickets, 'events': events})
 
 def login_view(request):
     return render(request, "login.html", {})

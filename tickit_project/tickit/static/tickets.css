@@ -1,0 +1,8 @@
+hr.cost-line {
+  width: 20%
+}
+
+.cost {
+  display: flex;
+  margin-right: 3rem;
+}
