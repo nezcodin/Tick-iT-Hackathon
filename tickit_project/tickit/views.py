@@ -9,13 +9,17 @@ from .forms import RegistrationForm
 from .serializers import UserSerializer, VenueSerializer, EventSerializer, TicketSerializer
 from django.shortcuts import redirect
 from django.contrib.auth import logout
+import random
 
 # Site Views
 
 def landing_view(request):
     events = Event.objects.all()
     venues = Venue.objects.all()
-    return render(request, "home.html", {'events': events, 'venues': venues})
+    # Choose 10 random venues and events
+    random_venues = random.sample(list(venues), k=3)
+    random_events = random.sample(list(events), k=3)
+    return render(request, "home.html", {'events': random_events, 'venues': random_venues})
     
 def events_view(request):
     events = Event.objects.all()

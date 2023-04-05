@@ -1,5 +1,22 @@
-hr.cost-line {
-  width: 20%
+@import url(./css/tokens.css);
+@import url(./css/colors.module.css);
+@import url(./css/typography.module.css);
+@import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+
+.tickets-container {
+  display: flex;
+  height: 100%;
+  width: 100%
+}
+
+.ticket {
+  background-color: var(--md-sys-color-primary-container);
+  height: 10rem;
+  width: 95%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  display: flex;
 }
 
 .cost {
