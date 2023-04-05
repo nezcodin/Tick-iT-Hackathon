@@ -1,10 +1,13 @@
 from django.db import models
 from django.conf import settings
 import datetime
+from django.contrib.auth.models import AbstractUser
 
+class CustomUser(AbstractUser):
+    is_venue = models.BooleanField(default=False)
 
 class Venue(models.Model): 
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='member', null=True)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='venues', null=True)
     name = models.CharField(max_length=100)
     location = models.TextField(default='location')
     photo_url = models.TextField(null=True, default=None)
@@ -25,7 +28,7 @@ class Event(models.Model):
 
 class Ticket(models.Model): 
     eventname = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='stuff', to_field='name')
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='usertickets')
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL , on_delete=models.CASCADE, related_name='usertickets')
     forEvent = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='eventtickets')
     price = models.IntegerField()
     def __str__(self):
