@@ -4,22 +4,85 @@
 @import url(./css/theme.light.css) (prefers-color-scheme: light);
 @import url(./css/theme.dark.css) (prefers-color-scheme: dark);
 
-.tickets-container {
-  display: flex;
+body {
   height: 100%;
-  width: 100%
+  width: 99%;
+}
+
+.title {
+  margin-left: 1rem;
+}
+
+.ticket-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
 }
 
 .ticket {
   background-color: var(--md-sys-color-primary-container);
   height: 10rem;
-  width: 95%;
+  width: 96%;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  margin-left: 2rem;
   display: flex;
 }
 
-.cost {
+.name-venue {
   display: flex;
+  flex-direction: column;
+  margin-top: -0.5rem;
+  height: 1rem;
+  width: 20rem;
+  margin-left: 1rem;
+}
+
+#event-name {
+  margin-bottom: -0.7rem;
+}
+
+.date-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 65rem;
+  width: 10rem;
+  margin-right: 1rem;
+}
+
+#date-time {
+  width: 9rem;
+  margin-bottom: 4.5rem;
+}
+
+#add {
+  display: flex;
+  justify-content: end;
+  margin-right: 2rem;
+}
+
+.cost {
+  height: 10rem;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
   margin-right: 3rem;
+}
+
+.button-container {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+#purchase {
+  border-radius: 5rem;
+  width: 7rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  border-color: var(--md-sys-color-on-tertiary-container);
+  margin: 1rem;
 }

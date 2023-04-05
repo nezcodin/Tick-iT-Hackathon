@@ -11,14 +11,18 @@
 
     <div class="tickets-container">
 
-      <div class="ticket">        
-        <h4>{{ event.name }}</h4>
-        <p>{{ event.venue }}</p>
-        <p>{{ event.date }} | {{ event.time }}</p>
-        <h5>Price: ${{ ticket.price }}</h5>
+      <div class="ticket"> 
+        <div class="name-venue">       
+          <h4 id="event-name">{{ event.name }}</h4>
+          <p id="event-venue">{{ event.venue }}</p>
+        </div>
+        <div class="date-price">
+          <p id="date-time">{{ event.date }} | {{ event.time }}</p>
+          <h5 id="price">Price: ${{ ticket.price }}</h5>
+        </div>
       </div>
 
-      <p>+ Add Another Ticket</p>
+      <p id="add">+ Add Another Ticket</p>
 
       <div class="cost">
         <p>Tickets: $</p>
@@ -29,7 +33,9 @@
     </div>
 
     <hr class="line">
-    <button>Make Purchase</button>
+    <div class="button-container">
+      <button id="purchase">Make Purchase</button>
+    </div>
   </body> 
 
   {% endblock %}
