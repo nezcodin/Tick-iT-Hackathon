@@ -2,12 +2,10 @@
 {% load static %}
 
 <html>
-  <head>
-    <link rel="stylesheet" href="{% static 'venue_details.css' %}" />
-  </head>
   {% block content %}
   <body>
     <div class='venue-details-container'>
+        <a href="{% url 'venues_list_view' %}">Go Back</a>
         <h2>Venue Details</h2>
         <div class='venue-details-header'>
             <div>
@@ -43,21 +41,29 @@
                 <ul>
                     {% for event in events %}
                         {% if event.venue_id == venue.id %}
-                            <li class='venue-event-container'>
-                                <div class='venue-event-header'>
-                                    <img src={{ event.photo_url }} alt="Event Image" />
-                                    <h4>{{ event.name }}</h4>
-                                    <h5>{{ venue.name }}</h5>
-                                </div>
-                                <div class='venue-event-details'>
-                                    <h6>{{ event.date }}<h6>
-                                    <h6> event time<h6>
-                                </div>
-                                <div class='venue-event-action'>
-                                    <a href="{% url 'event_details_view' event.pk %}">See Event Details...</a>
-                                    <button>Buy Tickets</button>
-                                </div>
-                            </li>
+                        <div class="event">
+                            <div class="image-container">
+                              <img src={{ event.photo_url }}>
+                            </div>
+                  
+                            <div class="details-container">
+                  
+                              <div class="event-name-link">
+                                <h4 class="heading" id="event-name">{{ event.name }}</h4>
+                                <p id="artist-name">artist name</p>
+                                <a class="link" href='{% url 'event_details_view' event.pk %}'>See Event Details...</a>
+                              </div>
+                  
+                              <div class="event-venue-button">
+                                <h4 class="heading" id="venue-name">{{ event.venue }}</h4>
+                                <p id="date-time">{{ event.date }} | {{event.time}}</p>
+                                <button>Buy a Ticket</button>
+                              </div>
+                  
+                            </div>
+                  
+                          </div>
+                          <hr class="line">
                         {% endif %}
                     {% empty %}
                         <li> No upcoming events </li>
