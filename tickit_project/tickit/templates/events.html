@@ -1,40 +1,37 @@
 {% extends 'base.html' %}
 {% load static %}
 <html>
-  <head>
-    <link rel="stylesheet" href="{% static 'events.css' %}">
-  </head>
   {% block content %}
   <body>
-    <h2 class="title">All Events</h2>
-    <hr class="line">
+    <h2 class="event-title">All Events</h2>
+    <hr class="event-line">
     <div class="events-container">
 
       {% for event in events%}
 
         <div class="event">
           <div class="image-container">
-            <img src={{ event.photo_url }}>
+            <img class="event-photo" src={{ event.photo_url }}>
           </div>
 
           <div class="details-container">
 
             <div class="event-name-link">
-              <h4 class="heading" id="event-name">{{ event.name }}</h4>
-              <p id="artist-name">artist name</p>
-              <a class="link" href='{% url 'event_details_view' event.pk %}'>See Event Details...</a>
+              <h4 class="event-heading" id="event-name">{{ event.name }}</h4>
+              <p class="event-p" id="artist-name">artist name</p>
+              <a class="event-details-link" href='{% url 'event_details_view' event.pk %}'>See Event Details...</a>
             </div>
 
             <div class="event-venue-button">
-              <h4 class="heading" id="venue-name">{{ event.venue }}</h4>
-              <p id="date-time">{{ event.date }} | {{event.time}}</p>
-              <button type='button' onclick="window.location.href='{% url 'purchase_tickets' event_id=event.id %}'">Buy a Ticket</button>
+              <h4 class="event-heading" id="venue-name">{{ event.venue }}</h4>
+              <p class="event-p" id="date-time">{{ event.date }} | {{event.time}}</p>
+              <button id="buy-ticket-button" type='button' onclick="window.location.href='{% url 'purchase_tickets' event_id=event.id %}'">Buy a Ticket</button>
             </div>
 
           </div>
 
         </div>
-        <hr class="line">
+        <hr class="event-line">
 
       {% endfor %}
 

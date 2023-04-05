@@ -1,22 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 <html>
-  <head>
-    <link rel="stylesheet" href="{% static 'home.css' %}">
-  </head>
   {% block content %}
   <body>
 
 
     <div class="featured-events">
-      <h2>Featured Events</h2>
+      <h2 class="title">Featured Events</h2>
 
       <hr class="line"></hr>
 
       <div class="events-container">
         {% for event in events %}
           <div class="featured-event-container">
-            <img src={{ event.photo_url }}></img>
+            <img class="home-image" src={{ event.photo_url }}></img>
             <p>{{ event.name }}</p>
             <p>{{ event.date }}</p>
           </div>
@@ -24,18 +21,18 @@
 
       </div>
 
-      <a href="{% url 'events_list_view' %}" class="view-all">View All Events...</a>
+      <a id="events-link" href="{% url 'events_list_view' %}" class="view-all">View All Events...</a>
     </div>
 
     <div class="featured-venues">
-      <h2>Featured Venues</h2>
+      <h2 class="title">Featured Venues</h2>
 
         <hr class="line"></hr>
 
         <div class="venues-container">
           {% for venue in venues %}
             <div class="venue-container">
-              <img src={{ venue.photo_url }}></img>
+              <img class="home-image" src={{ venue.photo_url }}></img>
               <p>{{ venue.name }}</p>
               <p>{{ venue.location }}</p>
             </div>
@@ -43,7 +40,7 @@
 
         </div>
 
-        <a href="{% url 'venues_list_view' %}" class="view-all">View All Venues...</a>  
+        <a id="venues-link" href="{% url 'venues_list_view' %}" class="view-all">View All Venues...</a>  
     </div>    
 
 
