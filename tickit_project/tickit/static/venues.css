@@ -17,7 +17,7 @@ hr.line {
   margin-left: 1rem;
 }
 
-img {
+.image-container img {
   height: 8rem;
   width: 8rem;
   border-radius: 10rem;

@@ -4,21 +4,117 @@
 @import url(./css/theme.light.css) (prefers-color-scheme: light);
 @import url(./css/theme.dark.css) (prefers-color-scheme: dark);
 
+
+/* Venue Details Container */
 .venue-details-container {
-    background-color: red;
-    height: 10rem;
-    width: 80%;
-}
+  width: 80%;
+  margin: 0 auto;
+  }
   
-h2 {
-    color: red;
-}
-.venue-event-container {
-    background-color: blue;
-    height: 10rem;
-    width: 80%;
-}
+  /* Go Back Button */
+  .venue-details-container a {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #333;
+  text-decoration: none;
+  }
   
-  .events-container {
-    background-color: brown;
+  /* Venue Details Header */
+  .venue-details-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  }
+  
+  /* Venue Details Image */
+  .venue-details-header img {
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+  object-fit: cover;
+  }
+  
+  /* Venue Details Name */
+  .venue-details-header h3:first-child {
+  margin-bottom: 10px;
+  }
+  
+  /* Venue Details Address */
+  .venue-details-header h3:last-child {
+  font-weight: normal;
+  margin-bottom: 10px;
+  }
+  
+  /* Venue Details Divider Line */
+  .line {
+  border: none;
+  border-top: 1px solid #bbb;
+  margin: 20px 0;
+  }
+  
+  /* Update/Delete Venue Buttons */
+  .venue-details-container button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  }
+  
+  /* Venue Events Container */
+  .venue-events {
+  margin-top: 20px;
+  }
+  
+  /* Upcoming Events Header */
+  .venue-events h4 {
+  margin-bottom: 10px;
+  }
+  
+  /* Venue Event Container */
+  .venue-event-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  }
+  
+  /* Venue Event Header */
+  .venue-event-header {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  }
+  
+  /* Venue Event Image */
+  .venue-event-header img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  object-fit: cover;
+  }
+  
+  /* Venue Event Details */
+  .venue-event-details h6 {
+  margin-bottom: 5px;
+  font-weight: normal;
+  }
+  
+  /* Venue Event Action */
+  .venue-event-action button {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto;
+  }
+  
+  /* Venue Event Action a */
+  .venue-event-action a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 10px;
   }

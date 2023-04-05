@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from rest_framework import generics
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -38,10 +38,10 @@ def venue_details_view(request, pk):
     events = Event.objects.all()
     return render(request, "venue_details.html", {'venue': venue, 'events': events})
 
-def purchase_tickets_view(request, event_id):
-    event = get_object_or_404(Event, id=event_id)
-    tickets = Ticket.objects.filter(forEvent_id=event_id)   
-    return render(request, "tickets.html", {'tickets': tickets, 'event': event})
+def purchase_tickets_view(request):
+    tickets = Ticket.objects.all()
+    events = Event.objects.all()
+    return render(request, "tickets.html", {'tickets': tickets, 'events': events})
 
 def login_view(request):
     return render(request, "login.html", {})
