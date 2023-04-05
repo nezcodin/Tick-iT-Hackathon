@@ -40,7 +40,7 @@ Tick-iT is a full-stack Django web application that allows users to browse throu
 - Users can see events and venues
 - Users can view detail pages for both events and venues
 - Users can "purchase" tickets
-- The "Users" model will have full frontend CRUD fucntionality
+- The "Venues" model will have full frontend CRUD fucntionality
 
 ## Component Hierarchy Diagram
 
@@ -58,3 +58,20 @@ Tick-iT is a full-stack Django web application that allows users to browse throu
 
 - Users can sign in as a venue
 - Venue accounts can CRUD their own venues and related events
+- "Users" model will have full frontend CRUD functionality
+
+## Miscellaneous Links
+
+<details>
+    <summary>Our Trello Board</summary>
+
+- [Trello](https://trello.com/b/nU3skTmi/hackathon)
+
+</details>
+
+<details>
+    <summary>Our Figma Board</summary>
+
+- [Figma Board](https://www.figma.com/file/amMiBf1DZb2cHvdkhEIGK1/React%2FDjango-Hackathon?node-id=0-1&t=scx1gjAbfLR7ZWOD-0)
+
+</details>
