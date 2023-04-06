@@ -40,14 +40,6 @@ def venue_details_view(request, pk):
     events = Event.objects.all()
     return render(request, "venue_details.html", {'venue': venue, 'events': events})
 
-# def purchase_tickets_view(request, pk):
-#     event = get_object_or_404(Event, pk=pk)
-#     tickets = Ticket.objects.all()
-#     total_cost_tickets = Ticket.objects.get(price)
-#     sales_tax = round(total_cost_tickets * 0.1, 2)
-#     total_cost_with_tax = round(total_cost_tickets + sales_tax, 2)
-#     return render(request, "tickets.html", {'tickets': tickets, 'event': event, 'total_cost_tickets': total_cost_tickets, 'sales_tax': sales_tax, 'total_cost_with_tax': total_cost_with_tax})
-
 def purchase_tickets_view(request, pk):
     event = get_object_or_404(Event, pk=pk)
     tickets = Ticket.objects.filter(forEvent=event)
@@ -81,7 +73,7 @@ def registration(request):
 class VenueCreateView(CreateView):
     model = Venue
     template_name = 'create_venue.html'
-    fields = ['name', 'location', 'photo_url']
+    fields = ['name', 'location', 'description', 'photo_url']
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
@@ -98,7 +90,7 @@ class VenueCreateView(CreateView):
 class VenueUpdateView(UpdateView):
     model = Venue
     template_name = 'update_venue.html'
-    fields = ['name', 'location', 'photo_url']
+    fields = ['name', 'location', 'description', 'photo_url']
     success_url = reverse_lazy('home')
     
     def form_valid(self, form):
