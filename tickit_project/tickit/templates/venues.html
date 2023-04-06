@@ -1,13 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 <html>
-
+  {% block content %}
   <head>
     <link rel="stylesheet" href="{% static 'venues.css' %}">
   </head>
-  {% block content %}
   <body>
-    <a href="{% url 'home' %}">Go Back</a>
+    <button class="back-button" onclick="window.location.href='{% url 'home' %}'">Go Back</button>
     <h2 class="title">All Venues</h2>
     <hr class="line"></hr>
 

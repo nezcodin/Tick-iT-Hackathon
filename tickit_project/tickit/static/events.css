@@ -4,6 +4,16 @@
 @import url(./css/theme.light.css) (prefers-color-scheme: light);
 @import url(./css/theme.dark.css) (prefers-color-scheme: dark);
 
+.back-button {
+  margin: 1rem;
+  border-radius: 5rem;
+  width: 5rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  border-color: var(--md-sys-color-on-tertiary-container);
+}
+
 .event-title {
   margin-top: 3rem;
   margin-left: 1rem;
@@ -78,7 +88,7 @@
 }
 
 #date-time {
-  margin-bottom: 3.5rem;
+  margin-bottom: 1rem;
 }
 
 #buy-ticket-button {

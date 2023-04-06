@@ -1,3 +1,19 @@
+@import url(./css/tokens.css);
+@import url(./css/colors.module.css);
+@import url(./css/typography.module.css);
+@import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+
+.back-button {
+  margin: 1rem;
+  border-radius: 5rem;
+  width: 5rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  border-color: var(--md-sys-color-on-tertiary-container);
+}
+
 html {
   text-align: center;
   align-items: center;
@@ -8,6 +24,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 3rem;
 }
 
 .register-back {
@@ -15,28 +32,25 @@ html {
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  height: 20px;
-  width: 65px;
-  border: solid 1px black;
-  text-shadow: 1px 1px 2px rgb(255, 255, 255);
-  background-color: #ffc9d4;
-  border: solid 1px rgb(255, 255, 255);
-  box-shadow: 2px 2px 2px rgb(44, 44, 44);
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+  border-radius: 5rem;
+  width: 7rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
 }
 
 .register-back-link {
-  color: black;
+  color: var(--md-sys-color-on-tertiary);
   text-decoration: none;
 }
 
-.register-back:hover {
+/* .register-back:hover {
   background-color: #ffffff;
   color: rgb(0, 0, 0);
   box-shadow: 2px 2px 2px rgb(44, 44, 44);
   border: solid 1px #000000;
-}
+} */
 
 .register-all {
   text-align: center;
@@ -44,20 +58,17 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ffc9d4;
-  width: 400px;
-  height: 500px;
+  width: 30rem;
+  height: 35rem;
   border-radius: 1em;
-  background-color: #818181;
-  box-shadow: 2px 2px 2px rgb(70, 70, 70);
+  background-color: var(--md-sys-color-primary-container);
 }
-.form {
-  color: white !important;
 
+.form {
+  color: var(--md-sys-color-on-primary-container);
 }
 
 .form-left {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,14 +76,32 @@ html {
 }
 
 .register-title {
-  margin-top: 0px ;
+  margin-top: 0px;
   margin-bottom: 0px;
-  font-family: 'Roboto', sans-serif;
-  color: white;
+  color: var(--md-sys-color-on-primary-container);
   font-size: 30px;
-  text-shadow: 1px 1px 2px rgb(0, 0, 0);
-} 
+}
 
-.form-control{
-  color: black;
+.form-control {
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+#register-btn {
+  border-radius: 5rem;
+  width: 7rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  border-color: var(--md-sys-color-on-tertiary-container);
+}
+
+input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 20rem;
+  border-radius: 5rem;
+  padding-left: 1rem;
+  border-color: var(--md-sys-color-on-secondary-container);
 }

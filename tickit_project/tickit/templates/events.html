@@ -2,8 +2,11 @@
 {% load static %}
 <html>
   {% block content %}
+  <head>
+    <link rel="stylesheet" href="{% static 'events.css' %}" />
+  </head>
   <body>
-    <a href="{% url 'home' %}">Go Back</a>
+    <button class="back-button" onclick="window.location.href='{% url 'home' %}'">Go Back</button>
     <h2 class="event-title">All Events</h2>
     <hr class="event-line">
     <div class="events-container">
@@ -19,7 +22,7 @@
 
             <div class="event-name-link">
               <h4 class="event-heading" id="event-name">{{ event.name }}</h4>
-              <p class="event-p" id="artist-name">artist name</p>
+              <p class="event-p" id="artist-name">{{ event.artist }}</p>
               <a class="event-details-link" href='{% url 'event_details_view' event.pk %}'>See Event Details...</a>
             </div>
 

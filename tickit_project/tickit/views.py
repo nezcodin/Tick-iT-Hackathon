@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from rest_framework import generics
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -18,8 +18,8 @@ def landing_view(request):
     events = Event.objects.all()
     venues = Venue.objects.all()
     # Choose 10 random venues and events
-    random_venues = random.sample(list(venues), k=3)
-    random_events = random.sample(list(events), k=3)
+    random_venues = random.sample(list(venues), k=8)
+    random_events = random.sample(list(events), k=8)
     return render(request, "home.html", {'events': random_events, 'venues': random_venues})
     
 def events_view(request):
@@ -28,7 +28,8 @@ def events_view(request):
 
 def event_details_view(request, pk):
     event = Event.objects.get(pk=pk)
-    return render(request, "event_details.html", {'event': event})
+    tickets_available = random.randint(1, 150) # generate random number b/w 1-150
+    return render(request, "event_details.html", {'event': event, 'tickets_available': tickets_available})
 
 def venues_view(request):
     venues = Venue.objects.all()
@@ -40,10 +41,16 @@ def venue_details_view(request, pk):
     return render(request, "venue_details.html", {'venue': venue, 'events': events})
 
 def purchase_tickets_view(request, pk):
+    event = get_object_or_404(Event, pk=pk)
     tickets = Ticket.objects.all()
     events = Event.objects.all()
-    event_id = Event.objects.get(pk=pk)
-    return render(request, "tickets.html", {'tickets': tickets, 'events': events, 'event_id': event_id})
+    total_cost_tickets = sum(ticket.price for ticket in tickets)
+    sales_tax = round(total_cost_tickets * 0.1, 2)
+    total_cost_with_tax = round(total_cost_tickets + sales_tax, 2)
+    return render(request, "tickets.html", {'tickets': tickets, 'events': events, 'event': event, 'total_cost_tickets': total_cost_tickets, 'sales_tax': sales_tax, 'total_cost_with_tax': total_cost_with_tax})
+
+def thank_you_view(request):
+    return render(request, "thank_you.html")
 
 def login_view(request):
     return render(request, "login.html", {})

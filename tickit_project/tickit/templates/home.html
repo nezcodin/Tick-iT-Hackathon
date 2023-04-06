@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
+
 <html>
+  
   {% block content %}
+  <head>
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+  </head>
   <body>
 
 
@@ -12,7 +17,7 @@
 
       <div class="events-container">
         {% for event in events %}
-          <div class="featured-event-container">
+          <div class="featured-event-container" onclick="window.location.href='{% url 'event_details_view' event.pk %}'">
             <img class="home-image" src={{ event.photo_url }}></img>
             <p>{{ event.name }}</p>
             <p>{{ event.date }}</p>
@@ -31,7 +36,7 @@
 
         <div class="venues-container">
           {% for venue in venues %}
-            <div class="venue-container">
+            <div class="venue-container" onclick="window.location.href='{% url 'venue_details_view' pk=venue.pk %}'">
               <img class="home-image" src={{ venue.photo_url }}></img>
               <p>{{ venue.name }}</p>
               <p>{{ venue.location }}</p>

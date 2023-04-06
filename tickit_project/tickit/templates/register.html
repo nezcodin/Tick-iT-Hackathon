@@ -7,9 +7,7 @@
   </head>
   <body>
     <div class='register-ctn'>
-      <div class='register-back'>
-        <a href="{% url 'home' %}" class='register-back-link'>Go Back</a>
-      </div>
+      <button class="back-button" onclick="window.location.href='{% url 'home' %}'">Go Back</button>
       <div class='register-all'> 
         <div class='register-title'>
           <h2 class='register-title'>Create Account</h2>
@@ -17,7 +15,7 @@
         <form method="post" action="{% url 'register' %}" class='form'>
           {% csrf_token %}
           {{ form.as_p }}
-          <button type="submit">Register</button>
+          <button id="register-btn" type="submit">Register</button>
         </form>
       </div>
     </div>

@@ -2,40 +2,52 @@
 {% load static %}
 
 <html>
+  
   {% block content %}
+  <head>
+    <link rel="stylesheet" href="{% static 'venue_details.css' %}" />
+  </head>
   <body>
     <div class='venue-details-container'>
-        <a href="{% url 'venues_list_view' %}">Go Back</a>
-        <h2>Venue Details</h2>
+      <button class="back-button" onclick="window.location.href='{% url 'venues_list_view' %}'">Go Back</button>
+        <h2 class="title">Venue Details</h2>
         <div class='venue-details-header'>
             <div>
                 <h3> {{ venue.name }} </h3>
                 {% if venue.location %}
                 <h3> {{ venue.location }} </h3>
                 {% else %}
-                <h3> Address not available </h3>
+                <h3> Address not available. </h3>
                 {% endif %}
                 <hr class="line"></hr>
-                {% if venue.photo_url %}
-                <img src={{ venue.photo_url }} alt="Venue Image" />
-                {% else %}
-                <h3> Photo not available </h3>
-                {% endif %}
+                <div class="photo-description">
+                  {% if venue.photo_url %}
+                  <img id="venue-photo" src={{ venue.photo_url }} alt="Venue Image" />
+                  {% else %}
+                  <h3> Photo not available. </h3>
+                  {% endif %}
+                  {% if venue.description %}
+                  <p id="description">{{ venue.description }}</p>
+                  {% else %}
+                  <p id="description"> Description not available. </p>
+                  {% endif %}
+                </div>
             </div>
         </div>
         {% if user.id == venue.owner_id %}
-        <div>
+        <div class="update-delete-buttons">
             <a href="{% url 'venue_update_view' venue.pk %}">
-                <button>Update Venue</button>
+                <button id="update-button">Update Venue</button>
             </a>
             <form method="post" action="{% url 'venue_delete_view' venue.pk %}">
                 {% csrf_token %}
-                <button type="submit">Delete Venue</button>
+                <button id="delete-button" type="submit">Delete Venue</button>
             </form>
         </div>
         {% endif %}
+        <hr class="line"></hr>
         <div class='venue-events'>
-            <h4> Upcoming Events </h4>
+            <h4 class="title"> Upcoming Events </h4>
             <div>
                 {% if events %}
                 <ul>
@@ -50,14 +62,14 @@
                   
                               <div class="event-name-link">
                                 <h4 class="heading" id="event-name">{{ event.name }}</h4>
-                                <p id="artist-name">artist name</p>
+                                <p id="artist-name">{{ event.artist }}</p>
                                 <a class="link" href='{% url 'event_details_view' event.pk %}'>See Event Details...</a>
                               </div>
                   
                               <div class="event-venue-button">
                                 <h4 class="heading" id="venue-name">{{ event.venue }}</h4>
                                 <p id="date-time">{{ event.date }} | {{event.time}}</p>
-                                <button>Buy a Ticket</button>
+                                <button id="buy-ticket-button" onclick="window.location.href='{% url 'purchase_tickets' event.pk %}'">Buy a Ticket</button>
                               </div>
                   
                             </div>

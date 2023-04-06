@@ -10,6 +10,7 @@ class Venue(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='venues', null=True)
     name = models.CharField(max_length=100)
     location = models.TextField(default='location')
+    description = models.TextField(default='')
     photo_url = models.TextField(null=True, default=None)
     def __str__(self):
         return self.name

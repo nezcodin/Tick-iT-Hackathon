@@ -7,9 +7,7 @@
   </head>
   <body>
     <div class='login-ctn'>
-      <div class='login-back'>
-        <a href="{% url 'home' %}" class='login-back-link'>Go Back</a>
-      </div>
+      <button class="back-button" onclick="window.location.href='{% url 'home' %}'">Go Back</button>
       <div class='login-all'>
         {% if form.errors %}
           <p>Your username and password didn't match. Please try again.</p>
