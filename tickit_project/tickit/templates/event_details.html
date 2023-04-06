@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'event_details.css' %}" />
   </head> 
   <body>
-    <a href="{% url 'events_list_view' %}">Go Back</a>
+    <button class="back-button" onclick="window.location.href='{% url 'events_list_view' %}'">Go Back</button>
     <div class='event-details-container'>
         <h2 class="title">Event Details</h2>
         <div class='event-details-header'>

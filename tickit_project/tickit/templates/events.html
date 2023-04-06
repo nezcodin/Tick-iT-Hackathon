@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{% static 'events.css' %}" />
   </head>
   <body>
-    <a href="{% url 'home' %}">Go Back</a>
+    <button class="back-button" onclick="window.location.href='{% url 'home' %}'">Go Back</button>
     <h2 class="event-title">All Events</h2>
     <hr class="event-line">
     <div class="events-container">
