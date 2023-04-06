@@ -3,6 +3,9 @@
 
 <html>
   {% block content %}
+  <head>
+    <link rel="stylesheet" href="{% static 'venue_details.css' %}" />
+  </head>
   <body>
     <div class='venue-details-container'>
         <a href="{% url 'venues_list_view' %}">Go Back</a>
