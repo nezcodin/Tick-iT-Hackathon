@@ -62,7 +62,7 @@
                               <div class="event-venue-button">
                                 <h4 class="heading" id="venue-name">{{ event.venue }}</h4>
                                 <p id="date-time">{{ event.date }} | {{event.time}}</p>
-                                <button id="buy-ticket-button">Buy a Ticket</button>
+                                <button id="buy-ticket-button" onclick="window.location.href='{% url 'purchase_tickets' event.pk %}'">Buy a Ticket</button>
                               </div>
                   
                             </div>
