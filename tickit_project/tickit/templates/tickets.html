@@ -8,27 +8,31 @@
   <body>
     <h2 class="title">Purchase Tickets</h2>
     <hr class="line">
-    <h1>{{ events.name }}</h1>
+    <h2 class="event-title">{{ event.name }}</h2>
 
     <div class="tickets-container">
 
+      {% for ticket in event.eventtickets.all %}
       <div class="ticket"> 
         <div class="name-venue">       
-          <h4 id="event-name">{{ events.name }}</h4>
+          <h4 id="event-name">{{ event.name }}</h4>
           <p id="event-venue">{{ event.venue }}</p>
         </div>
         <div class="date-price">
-          <p id="date-time">{{ events.date }} | {{ events.time }}</p>
-          <h5 id="price">Price: ${{ ticket.price }}</h5>
+          <p id="date-time">{{ event.date }} | {{ event.time }}</p>
+          <h4 id="price">Price: ${{ ticket.price }}</h4>
         </div>
       </div>
+      {% endfor %}
 
-      <p id="add">+ Add Another Ticket</p>
+      {% comment %} <p id="add">+ Add Another Ticket</p> {% endcomment %}
 
-      <div class="cost">
-        <p>Tickets: $</p>
-        <p>Sales Tax: $10</p>
-        <h4>Total: $</h4>
+      <div class="cost-container">
+        <div class="cost">
+          <p>Tickets: ${{ total_cost_tickets }}</p>
+          <p>Sales Tax (10%): ${{ sales_tax }}</p>
+          <h4>Total: ${{ total_cost_with_tax }}</h4>
+        </div>
       </div>
 
     </div>

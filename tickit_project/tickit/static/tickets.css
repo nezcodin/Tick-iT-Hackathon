@@ -13,6 +13,10 @@ body {
   margin-left: 1rem;
 }
 
+.event-title {
+  margin-left: 2rem;
+}
+
 .ticket-container {
   display: flex;
   flex-direction: column;
@@ -48,26 +52,35 @@ body {
   align-items: flex-end;
   margin-left: 65rem;
   width: 10rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 #date-time {
-  width: 9rem;
+  width: 10rem;
   margin-bottom: 4.5rem;
 }
 
-#add {
+/* #add {
   display: flex;
   justify-content: end;
   margin-right: 2rem;
+} */
+
+.cost-container {
+  margin-top: 5rem;
+  display: flex;
+  height: 10rem;
+  width: 100%;
+  justify-content: end;
 }
 
 .cost {
   height: 10rem;
+  width: 15rem;
   display: flex;
-  justify-content: end;
   flex-direction: column;
-  margin-right: 3rem;
+  text-align: right;
+  margin-right: 2rem;
 }
 
 .button-container {
@@ -85,4 +98,13 @@ body {
   color: var(--md-sys-color-on-tertiary);
   border-color: var(--md-sys-color-on-tertiary-container);
   margin: 1rem;
+  margin-right: 1rem;
+}
+
+.line {
+  height: 1px;
+  border: 0;
+  background-color: var(--md-sys-color-on-secondary-container);
+  width: 95%;
+  margin-left: 1rem;
 }
