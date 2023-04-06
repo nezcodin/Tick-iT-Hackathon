@@ -19,7 +19,7 @@ def landing_view(request):
     venues = Venue.objects.all()
     # Choose 10 random venues and events
     random_venues = random.sample(list(venues), k=8)
-    random_events = random.sample(list(events), k=5)
+    random_events = random.sample(list(events), k=8)
     return render(request, "home.html", {'events': random_events, 'venues': random_venues})
     
 def events_view(request):
