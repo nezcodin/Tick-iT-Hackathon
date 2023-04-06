@@ -4,117 +4,128 @@
 @import url(./css/theme.light.css) (prefers-color-scheme: light);
 @import url(./css/theme.dark.css) (prefers-color-scheme: dark);
 
-
-/* Venue Details Container */
 .venue-details-container {
-  width: 80%;
-  margin: 0 auto;
-  }
-  
-  /* Go Back Button */
-  .venue-details-container a {
-  display: inline-block;
-  margin-bottom: 20px;
-  color: #333;
-  text-decoration: none;
-  }
-  
-  /* Venue Details Header */
-  .venue-details-header {
+  width: 100%;
+}
+
+#back-link {
+  margin: 1rem;
+  display: flex;
+}
+
+.title {
+  display: flex;
+  margin-left: 1rem;
+}
+
+.venue-details-header {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  margin-top: -2rem;
+}
+
+.venue-details-header img {
+  height: 20rem;
+  width: 20rem;
+}
+
+.update-delete-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem;
+  margin-top: -1rem;
+  margin-bottom: 0rem;
+}
+
+#update-button {
+  border-radius: 5rem;
+  width: 7rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  border-color: var(--md-sys-color-on-tertiary-container);
+}
+
+#delete-button {
+  border-radius: 5rem;
+  width: 7rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  border-color: var(--md-sys-color-on-tertiary-container);
+}
+
+.event {
+  background-color: var(--md-sys-color-primary-container);
+  height: 10rem;
+  width: 95%;
+  display: flex;
+}
+
+.image-container {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  }
-  
-  /* Venue Details Image */
-  .venue-details-header img {
-  width: 200px;
-  height: 200px;
-  margin-right: 20px;
-  object-fit: cover;
-  }
-  
-  /* Venue Details Name */
-  .venue-details-header h3:first-child {
-  margin-bottom: 10px;
-  }
-  
-  /* Venue Details Address */
-  .venue-details-header h3:last-child {
-  font-weight: normal;
-  margin-bottom: 10px;
-  }
-  
-  /* Venue Details Divider Line */
-  .line {
-  border: none;
-  border-top: 1px solid #bbb;
-  margin: 20px 0;
-  }
-  
-  /* Update/Delete Venue Buttons */
-  .venue-details-container button {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: 10px;
-  }
-  
-  /* Venue Events Container */
-  .venue-events {
-  margin-top: 20px;
-  }
-  
-  /* Upcoming Events Header */
-  .venue-events h4 {
-  margin-bottom: 10px;
-  }
-  
-  /* Venue Event Container */
-  .venue-event-container {
+  justify-content: center;
+}
+
+.event img {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 10rem;
+  margin-left: 2rem;
+}
+
+.event-name-link {
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  }
-  
-  /* Venue Event Header */
-  .venue-event-header {
+  flex-direction: column;
+  margin-top: -0.5rem;
+  height: 1rem;
+  width: 20rem;
+  margin-left: 2rem;
+}
+
+#event-name {
+  margin-bottom: -1rem;
+}
+
+#artist-name {
+  margin-bottom: 4.5rem;
+}
+
+.event-venue-button {
   display: flex;
-  align-items: center;
-  margin-right: 20px;
-  }
-  
-  /* Venue Event Image */
-  .venue-event-header img {
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
-  object-fit: cover;
-  }
-  
-  /* Venue Event Details */
-  .venue-event-details h6 {
-  margin-bottom: 5px;
-  font-weight: normal;
-  }
-  
-  /* Venue Event Action */
-  .venue-event-action button {
-  background-color: #333;
-  color: #fff;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: auto;
-  }
-  
-  /* Venue Event Action a */
-  .venue-event-action a {
-  color: #333;
-  text-decoration: none;
-  margin-right: 10px;
-  }
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 67rem;
+  margin-top: -1rem;
+  margin-right: 2rem;
+  width: 10rem;
+}
+
+#venue-name {
+  margin-bottom: -1rem;
+}
+
+#date-time {
+  margin-bottom: 3.5rem;
+}
+
+#buy-ticket-button {
+  border-radius: 5rem;
+  width: 7rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  border-color: var(--md-sys-color-on-tertiary-container);
+  margin-top: -2rem;
+  margin-right: 2rem;
+}
+
+.line {
+  height: 1px;
+  background-color: var(--md-sys-color-on-secondary-container);
+  width: 98%;
+  border: 0;
+}
