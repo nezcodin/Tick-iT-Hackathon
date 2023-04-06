@@ -28,7 +28,8 @@ def events_view(request):
 
 def event_details_view(request, pk):
     event = Event.objects.get(pk=pk)
-    return render(request, "event_details.html", {'event': event})
+    tickets_available = random.randint(1, 150) # generate random number b/w 1-150
+    return render(request, "event_details.html", {'event': event, 'tickets_available': tickets_available})
 
 def venues_view(request):
     venues = Venue.objects.all()

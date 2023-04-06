@@ -1,0 +1,65 @@
+@import url(./css/tokens.css);
+@import url(./css/colors.module.css);
+@import url(./css/typography.module.css);
+@import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+
+.event-details-container {
+  width: 100%;
+}
+
+.title {
+  margin-left: 2rem;
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.event-details-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.name-cat-artist {
+  margin-left: 2rem;
+}
+
+.date-time-venue {
+  margin-right: 2rem;
+}
+
+.event-description {
+  display: flex;
+  margin-left: 2rem;
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+#tickets-available {
+  display: flex;
+  justify-content: end;
+  margin-right: 2rem;
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.buy-tickets-button {
+  display: flex;
+  justify-content: end;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+
+button {
+  border-radius: 5rem;
+  width: 7rem;
+  height: 2rem;
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  border-color: var(--md-sys-color-on-tertiary-container);
+}
+
+.line {
+  height: 1px;
+  background-color: var(--md-sys-color-on-secondary-container);
+  width: 98%;
+  border: 0;
+}
