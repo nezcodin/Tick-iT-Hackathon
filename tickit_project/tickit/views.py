@@ -40,14 +40,21 @@ def venue_details_view(request, pk):
     events = Event.objects.all()
     return render(request, "venue_details.html", {'venue': venue, 'events': events})
 
+# def purchase_tickets_view(request, pk):
+#     event = get_object_or_404(Event, pk=pk)
+#     tickets = Ticket.objects.all()
+#     total_cost_tickets = Ticket.objects.get(price)
+#     sales_tax = round(total_cost_tickets * 0.1, 2)
+#     total_cost_with_tax = round(total_cost_tickets + sales_tax, 2)
+#     return render(request, "tickets.html", {'tickets': tickets, 'event': event, 'total_cost_tickets': total_cost_tickets, 'sales_tax': sales_tax, 'total_cost_with_tax': total_cost_with_tax})
+
 def purchase_tickets_view(request, pk):
     event = get_object_or_404(Event, pk=pk)
-    tickets = Ticket.objects.all()
-    events = Event.objects.all()
+    tickets = Ticket.objects.filter(forEvent=event)
     total_cost_tickets = sum(ticket.price for ticket in tickets)
     sales_tax = round(total_cost_tickets * 0.1, 2)
     total_cost_with_tax = round(total_cost_tickets + sales_tax, 2)
-    return render(request, "tickets.html", {'tickets': tickets, 'events': events, 'event': event, 'total_cost_tickets': total_cost_tickets, 'sales_tax': sales_tax, 'total_cost_with_tax': total_cost_with_tax})
+    return render(request, "tickets.html", {'tickets': tickets, 'event': event, 'total_cost_tickets': total_cost_tickets, 'sales_tax': sales_tax, 'total_cost_with_tax': total_cost_with_tax})
 
 def thank_you_view(request):
     return render(request, "thank_you.html")
