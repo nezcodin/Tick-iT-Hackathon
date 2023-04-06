@@ -17,14 +17,21 @@
                 {% if venue.location %}
                 <h3> {{ venue.location }} </h3>
                 {% else %}
-                <h3> Address not available </h3>
+                <h3> Address not available. </h3>
                 {% endif %}
                 <hr class="line"></hr>
-                {% if venue.photo_url %}
-                <img src={{ venue.photo_url }} alt="Venue Image" />
-                {% else %}
-                <h3> Photo not available </h3>
-                {% endif %}
+                <div class="photo-description">
+                  {% if venue.photo_url %}
+                  <img id="venue-photo" src={{ venue.photo_url }} alt="Venue Image" />
+                  {% else %}
+                  <h3> Photo not available. </h3>
+                  {% endif %}
+                  {% if venue.description %}
+                  <p id="description">{{ venue.description }}</p>
+                  {% else %}
+                  <p id="description"> Description not available. </p>
+                  {% endif %}
+                </div>
             </div>
         </div>
         {% if user.id == venue.owner_id %}

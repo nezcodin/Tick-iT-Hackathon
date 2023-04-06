@@ -64,10 +64,25 @@
   display: flex;
 }
 
+.photo-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#venue-photo {
+  margin: 1rem;
+}
+
 .image-container {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#description {
+  color: var(--md-sys-color-on-secondary-container);
+  width: 65rem;
 }
 
 .event img {
