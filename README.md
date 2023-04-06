@@ -48,7 +48,7 @@ Tick-iT is a full-stack Django web application that allows users to browse throu
 
 ## ERD
 
-![Tick-iT ERD](assets/ERD.png)
+![React_Django Hackathon ERD](https://user-images.githubusercontent.com/117141950/230410062-93fab382-7891-43d1-8b02-c9dbf9a4625d.png)
 
 ## Low-Fidelity Wireframes
 
